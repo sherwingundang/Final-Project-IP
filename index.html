@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueScreen — Tech & Gear Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-logo-icon">⚡</span>
+        <span class="logo">BlueScreen</span>
+        
+      </div>
+      <div class="cart-btn-container">
+        <button id="viewCartBtn" class="cart-btn" aria-label="View Shopping Cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Cart</span>
+          <span id="cartCount" class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <p class="hero-subtitle">Curated College Gear & Accessories</p>
+      <h1 class="hero-title">Upgrade Your Workspace & Style</h1>
+    </section>
+
+    <!-- Filter & Search Controls -->
+    <section class="controls-section">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="Search products by name or details...">
+      </div>
+        
+      <div class="select-wrapper">
+        <select id="categorySelect">
+          <option value="All">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Apparel">Apparel</option>
+        </select>
+      </div>
+
+      <div class="select-wrapper">
+        <select id="sortSelect">
+          <option value="default">Sort by: Featured</option>
+          <option value="low-to-high">Price: Low to High</option>
+          <option value="high-to-low">Price: High to Low</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Product Grid & Status -->
+    <div id="statusMessage" class="status-message">Loading products, please wait...</div>
+    <section id="productGrid" class="product-grid"></section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <h2>Your Shopping Cart</h2>
+            <p class="modal-subtitle">Review items before checkout</p>
+          </div>
+          <button id="closeCartBtn" class="close-btn" aria-label="Close cart">&times;</button>
+        </div>
+        <div id="cartItemsContainer" class="cart-items"></div>
+        <div class="cart-footer">
+          <div class="total-row">
+            <span>Order Subtotal</span>
+            <span class="total-amount">$<span id="cartTotal">0.00</span></span>
+          </div>
+          <button id="proceedCheckoutBtn" class="btn-primary">Proceed to Checkout →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal hidden">
+      <div class="modal-content modal-checkout">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <h2>Checkout Details</h2>
+            <p class="modal-subtitle">Enter your contact & shipping information</p>
+          </div>
+          <button id="closeCheckoutBtn" class="close-btn" aria-label="Close checkout">&times;</button>
+        </div>
+        
+        <form id="checkoutForm" novalidate>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="e.g. Juan Dela Cruz">
+            <small class="error-text" id="nameError"></small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="e.g. juan@example.com">
+              <small class="error-text" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="e.g. 09123456789">
+              <small class="error-text" id="phoneError"></small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Complete Shipping Address</label>
+            <textarea id="address" rows="2" placeholder="House #, Street, Barangay, City, Province"></textarea>
+            <small class="error-text" id="addressError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod">
+              <option value="">Select Payment Method</option>
+              <option value="Cash on Delivery">Cash on Delivery (COD)</option>
+              <option value="GCash">GCash</option>
+              <option value="Credit Card">Credit / Debit Card</option>
+            </select>
+            <small class="error-text" id="paymentError"></small>
+          </div>
+
+          <button type="submit" class="btn-primary">Place Order Now</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Order Receipt Modal -->
+    <div id="receiptModal" class="modal hidden">
+      <div class="modal-content modal-receipt">
+        <div class="modal-header header-center">
+          <div class="success-icon">✓</div>
+          <h2>Order Confirmed!</h2>
+          <p class="modal-subtitle">Thank you for shopping with BlueScreen.</p>
+          <button id="closeReceiptBtn" class="close-btn close-btn-corner" aria-label="Close">&times;</button>
+        </div>
+        <div id="receiptDetails" class="receipt-body"></div>
+        <button id="receiptDoneBtn" class="btn-primary">Continue Shopping</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Slide-in Toast Notification -->
+  <div id="toast" class="toast">Added to cart!</div>
+
+  <!-- Dynamic Floating Cursor Tooltip -->
+  <div id="cursorTooltip" class="cursor-tooltip hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

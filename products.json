@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mechanical Keyboard",
+    "category": "Electronics",
+    "price": 49.99,
+    "image": "Image/keyboard.jpg",
+    "description": "Compact mechanical keyboard with Bluetooth and tactile brown switches."
+  },
+  {
+    "id": 2,
+    "name": "Ergonomic Gaming Mouse",
+    "category": "Electronics",
+    "price": 29.99,
+    "image": "Image/mouse.jpg",
+    "description": "Customizable optical mouse with adjustable DPI and RGB backlighting."
+  },
+  {
+    "id": 3,
+    "name": "Noise-Cancelling Headphones",
+    "category": "Electronics",
+    "price": 89.99,
+    "image": "Image/headset.jpg",
+    "description": "Over-ear headphones providing deep bass and active noise cancellation."
+  },
+  {
+    "id": 4,
+    "name": "Minimalist Canvas Backpack",
+    "category": "Accessories",
+    "price": 39.50,
+    "image": "Image/backpack.jpg",
+    "description": "Durable water-resistant backpack with a padded 15-inch laptop sleeve."
+  },
+  {
+    "id": 5,
+    "name": "Insulated Stainless Flask",
+    "category": "Accessories",
+    "price": 18.00,
+    "image": "Image/flask.jpg",
+    "description": "Double-wall vacuum flask that keeps drinks cold up to 24 hours."
+  },
+  {
+    "id": 6,
+    "name": "Graphic Streetwear Hoodie",
+    "category": "Apparel",
+    "price": 45.00,
+    "image": "Image/hoodie.jpg",
+    "description": "Heavyweight cotton blend hoodie with front pouch pocket."
+  },
+  {
+    "id": 7,
+    "name": "Classic Denim Jacket",
+    "category": "Apparel",
+    "price": 59.99,
+    "image": "Image/denim jacket.jpg",
+    "description": "Timeless regular-fit denim jacket featuring vintage metal buttons."
+  },
+  {
+    "id": 8,
+    "name": "Desk Mat Large Felt Pad",
+    "category": "Accessories",
+    "price": 15.00,
+    "image": "Image/desk pad.jpg",
+    "description": "Smooth non-slip desk pad to protect surfaces and track mouse movement."
+  }
+  
+]
